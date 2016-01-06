@@ -84,3 +84,11 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 source /home/ntrauwaen/.babun-docker/setup.sh
+
+# DOCKER ENV
+if [[ `docker-machine status dev` == "Running" ]]; then
+    eval "$(docker-machine env dev)"
+else
+    docker-machine start dev
+    eval "$(docker-machine env dev)"
+fi
