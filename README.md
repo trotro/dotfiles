@@ -6,5 +6,5 @@ So my dotfiles contains config to run on either Windows + cygwin (babun) and lin
 
 **TODO**
 - [ ] easy install: adding a makefile or a shell script
-- [ ] moving [https://github.com/trotro/dockerized-apps] to a .dockerfunc
- - [ ] make it working for both linux and Windows
+- [ ] moving [dockerized apps](https://github.com/trotro/dockerized-apps) to a .dockerfunc
+ - [ ] make it working for both linux and Windows (if possible...)
