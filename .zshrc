@@ -53,6 +53,7 @@ ZSH_THEME="agnoster"
 plugins=(git)
 
 # User configuration
+DEFAULT_USER=`whoami`
 
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 # export MANPATH="/usr/local/man:$MANPATH"
