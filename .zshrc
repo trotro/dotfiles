@@ -87,10 +87,10 @@ source $ZSH/oh-my-zsh.sh
 if [[ `uname -a | grep CYGWIN` ]]; then
   source /home/ntrauwaen/.babun-docker/setup.sh
   # DOCKER ENV
-  if [[ `docker-machine status dev` == "Running" ]]; then
-    eval "$(docker-machine env dev)"
+  if [[ `docker-machine status default` == "Running" ]]; then
+    eval "$(docker-machine env default)"
   else
-    docker-machine start dev
-    eval "$(docker-machine env dev)"
+    docker-machine start default
+    eval "$(docker-machine env default)"
   fi
 fi
