@@ -84,13 +84,23 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-if [[ `uname -a | grep CYGWIN` ]]; then
-  source /home/ntrauwaen/.babun-docker/setup.sh
+if [[ `which docker-machine` != *"docker-machine not found"* ]]; then
+  if [[ `uname -a | grep CYGWIN` ]]; then
+    source /home/ntrauwaen/.babun-docker/setup.sh
   # DOCKER ENV
-  if [[ `docker-machine status default` == "Running" ]]; then
-    eval "$(docker-machine env default)"
-  else
-    docker-machine start default
-    eval "$(docker-machine env default)"
+    if [[ `docker-machine status default` == "Running" ]]; then
+      eval "$(docker-machine env default)"
+    else
+      docker-machine start default
+      eval "$(docker-machine env default)"
+    fi
   fi
 fi
+SSHAGENT=/usr/bin/ssh-agent
+SSHAGENTARGS="-s"
+if [ -z "$SSH_AUTH_SOCK" -a -x "$SSHAGENT" ]; then
+  eval `$SSHAGENT $SSHAGENTARGS`
+  trap "kill $SSH_AGENT_PID" 0
+fi
+
+alias csr="cd /c/Users/nicolast/Google\ Drive/SR"
