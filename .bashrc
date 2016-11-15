@@ -67,6 +67,8 @@ alias mv='mv -i'
 # -> Prevents accidentally clobbering files.
 alias mkdir='mkdir -p'
 alias pfx='ps -faux'
+alias sl='screen -ls'
+alias sr='screen -r'
 
 # Source global definitions
 if [ -f /etc/bashrc ]; then
