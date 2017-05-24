@@ -11,6 +11,7 @@ fi
 # set a fancy prompt (non-color, unless we know we "want" color)
 case "$TERM" in
 	xterm-color) color_prompt=yes;;
+	xterm-256color) color_prompt=yes;;
 esac
 
 # uncomment for a colored prompt, if the terminal has the capability; turned
@@ -59,7 +60,8 @@ fi
 
 # User specific aliases and functions
 alias ls='ls --color'
-alias la='ll -A'
+alias ll='ls -Al'
+alias la='ll -a'
 alias lr='ll -R'
 alias rm='rm -i'
 alias cp='cp -i'
