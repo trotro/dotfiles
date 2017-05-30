@@ -1,0 +1,10 @@
+#new-session -d
+#new-window -n workspace
+split-window -v -p 50
+select-pane -t 1
+split-window -h -p 50
+send-keys -t 1 'csr ; git status' enter
+send-keys -t 2 'clear' enter
+send-keys -t 3 'mtl' enter
+select-pane -t 3
+attach
