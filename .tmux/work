@@ -1,10 +1,10 @@
 #new-session -d
 #new-window -n workspace
-split-window -v -p 75
+split-window -v -p 50
 select-pane -t 1
 split-window -h -p 50
 send-keys -t 1 'cd /c/Users/nicolast/Google\ Drive/SR && git status ; ssh-add ~/.ssh/id_rsa' enter
-send-keys -t 2 'cd $HOME && clear' enter
+send-keys -t 2 'cd /c/Users/nicolast/Downloads && clear' enter
 send-keys -t 3 'ssh mtlref' enter
 select-pane -t 3
 attach
