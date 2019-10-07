@@ -7,6 +7,7 @@ packages:
   - pip3
   - ansible
   - golang
+  - vscode
 
 fish:
   fisher: curl https://git.io/fisher --create-dirs -sLo ~/.config/fish/functions/fisher.fish
