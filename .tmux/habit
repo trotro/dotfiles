@@ -1,5 +1,5 @@
 #new-session -d
-#new-window -n workspace
+new-window -n habitica
 split-window -v -p 25
 selectp -t 1
 split-window -h
