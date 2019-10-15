@@ -1,0 +1,13 @@
+#new-session -d
+new-window -n 6-panes
+split-window -v -p 50
+select-pane -t 0
+split-window -h -p 66
+select-pane -t 1
+split-window -h -p 50
+select-pane -t 3
+split-window -h -p 66
+select-pane -t 4
+split-window -h -p 50
+select-pane -t 0
+attach
