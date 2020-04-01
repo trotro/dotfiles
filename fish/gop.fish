@@ -10,7 +10,7 @@ function bastionp39fr --description 'connection to bastion.pier39.fr'
 end
 
 function bastionp39tools --description 'connection to bastion.pier39.tools'
-  ssh -i ~/.ssh/id_ecdsa_gop n.trauwaen@bastion.pier39.tools
+  ssh -i ~/.ssh/id_ecdsa_gop root@bastion.pier39.tools
 end
 
 #local test env
