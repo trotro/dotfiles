@@ -8,6 +8,27 @@ dotfiles:	## Installs the dotfiles.
 		ln -sfn $$file $(HOME)/$$f; \
 	done;
 
+.PHONY: bash
+bash:	## Installs bash dotfiles.
+	for file in $(shell find $(CURDIR) -name ".bash*"); do \
+		f=$$(basename $$file); \
+		ln -sfn $$file $(HOME)/$$f; \
+	done;
+
+.PHONY: fish
+fish:	## Installs fish .config files.
+	for file in $(shell find $(CURDIR)/fish -name "*.fish"); do \
+		f=$$(basename $$file); \
+		ln -sfn $$file $(HOME)/.config/fish/conf.d/$$f; \
+	done;
+
+.PHONY: zsh
+zsh:	## Installs zsh dotfiles.
+	for file in $(shell find $(CURDIR) -name ".zsh*"); do \
+		f=$$(basename $$file); \
+		ln -sfn $$file $(HOME)/$$f; \
+	done;
+
 .PHONY: test
 test: shellcheck ## Runs all the tests on the files in the repository.
 # if this session isn't interactive, then we don't want to allocate a
