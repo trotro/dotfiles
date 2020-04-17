@@ -3,7 +3,7 @@ all: dotfiles
 
 .PHONY: dotfiles
 dotfiles:	## Installs the dotfiles.
-	for file in $(shell find $(CURDIR) -name ".*" -not -name ".gitignore" -not -name ".git" -not -name ".*.swp" -not -name ".*~" -not -name ".travis.yml"); do \
+	for file in $(shell find $(CURDIR) -name ".*" -not -name ".gitignore" -not -name ".git" -not -name ".*.swp" -not -name ".*~" -not -name ".travis.yml" -not -path ".config"); do \
 		f=$$(basename $$file); \
 		ln -sfn $$file $(HOME)/$$f; \
 	done;
@@ -17,9 +17,16 @@ bash:	## Installs bash dotfiles.
 
 .PHONY: fish
 fish:	## Installs fish .config files.
-	for file in $(shell find $(CURDIR)/fish -name "*.fish"); do \
+	for file in $(shell find $(CURDIR)/.config/fish/conf.d -name "*.fish"); do \
 		f=$$(basename $$file); \
 		ln -sfn $$file $(HOME)/.config/fish/conf.d/$$f; \
+	done;
+
+.PHONY: neovim
+neovim:	## Installs n(eo)vim .config files.
+	for file in $(shell find $(CURDIR)/.config/nvim -name "*.vim"); do \
+		f=$$(basename $$file); \
+		ln -sfn $$file $(HOME)/.config/nvim/$$f; \
 	done;
 
 .PHONY: zsh
