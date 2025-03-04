@@ -23,12 +23,16 @@ function ls --wraps lsd --description 'alias ls=lsd'
   lsd $argv
 end
 
-function k --wraps kubectl --description 'alias k=kubectl'
-  kubectl $argv
+function k --wraps kubecolor --description 'alias k=kubecolor'
+  kubecolor $argv
 end
 
 function plantuml --description 'execute plantuml $argv (installed on vscode)'
   java -jar $HOME/.vscode/extensions/jebbs.plantuml-2.13.6/plantuml.jar $argv
+end
+
+function docker --wraps podman --description 'alias docker=podman'
+  podman $argv
 end
 
 #function dock1 --description 'ssh to dock1 server'

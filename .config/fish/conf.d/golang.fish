@@ -1,3 +1,3 @@
 #PATH
-#set -x -U PATH /usr/local/go/bin $PATH
-#set -x -U GOPATH (/usr/local/go/bin/go env GOPATH)
+set -x -g PATH $HOME/go/bin $PATH
+set -x -g GOPATH (/usr/local/bin/go env GOPATH)

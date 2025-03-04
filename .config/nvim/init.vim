@@ -38,6 +38,14 @@ nnoremap <C-l> :cprevious<cr>
 "let g:netrw_banner=0
 let g:netrw_liststyle = 3
 
+" vim uses bash best, not fish
+if &shell =~# 'fish$'
+    set shell=sh
+endif
+
+" use venv for python dependencies
+let g:python3_host_prog = '/Users/n.trauwaen/.venv-nvim/bin/python3'
+
 " vim-plug
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
 if empty(glob(data_dir . '/autoload/plug.vim'))
