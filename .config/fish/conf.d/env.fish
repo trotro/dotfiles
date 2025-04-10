@@ -6,8 +6,5 @@ set -gx PATH ~/.local/bin $PATH
 fish_add_path $HOME/.cargo/bin
 #Add openjdk
 fish_add_path /usr/local/opt/openjdk/bin
-#Enable asdf
-source /usr/local/opt/asdf/libexec/asdf.fish
 #Enable gcloud
 source "$(brew --prefix)/share/google-cloud-sdk/path.fish.inc"
-
