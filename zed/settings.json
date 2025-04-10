@@ -1,0 +1,132 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run the `open default settings` command
+// from the command palette or from `Zed` application menu.
+{
+  "edit_predictions": {
+    "mode": "subtle",
+    "copilot": {
+      "proxy": null,
+      "proxy_no_verify": null
+    },
+    "enabled_in_assistant": false
+  },
+  "features": {
+    "edit_prediction_provider": "zed"
+  },
+  "assistant": {
+    "default_model": {
+      "provider": "google",
+      "model": "gemini-2.0-pro-exp"
+    },
+    "version": "2"
+  },
+  "soft_wrap": "editor_width",
+  "theme": {
+    "mode": "system",
+    "light": "Ayu Mirage",
+    "dark": "Ayu Mirage"
+  },
+  "ui_font_size": 14,
+  "buffer_font_family": "Zed Plex Mono",
+  "buffer_font_size": 14,
+  "terminal": {
+    //"font_family": "Hack Nerd Font",
+    "font_family": "ZedMono Nerd Font",
+    "font_size": null,
+    "line_height": "comfortable",
+    "detect_venv": {
+      "on": {
+        // Default directories to search for virtual environments, relative
+        // to the current working directory. We recommend overriding this
+        // in your project's settings, rather than globally.
+        "directories": [".venv", "venv"],
+        // Can also be `csh`, `fish`, and `nushell`
+        "activate_script": "fish"
+      }
+    }
+  },
+  "vim_mode": true,
+  "autosave": "on_focus_change",
+  "tabs": {
+    "git_status": true
+  },
+  "tab_size": 2,
+  "languages": {
+    "Markdown": {
+      "format_on_save": "on"
+    }
+  },
+  "language_overrides": {
+    "Python": {
+      "format_on_save": {
+        "external": {
+          "command": "ruff",
+          "arguments": [
+            "check",
+            "--select=I",
+            "--exit-zero",
+            "--fix",
+            "--stdin-filename",
+            "{buffer_path}",
+            "-"
+          ]
+        }
+      }
+    }
+  },
+  "file_types": {
+    "Ansible": [
+      "**.ansible.yml",
+      "**.ansible.yaml",
+      "**/defaults/*.yml",
+      "**/defaults/*.yaml",
+      "**/meta/*.yml",
+      "**/meta/*.yaml",
+      "**/tasks/*.yml",
+      "**/tasks/*.yml",
+      "**/tasks/*.yaml",
+      "**/handlers/*.yml",
+      "**/handlers/*.yaml",
+      "**/group_vars/*.yml",
+      "**/group_vars/*.yaml",
+      "**/playbooks/*.yaml",
+      "**/playbooks/*.yml",
+      "**playbook*.yaml",
+      "**playbook*.yml"
+    ],
+    "Helm": [
+      "**/templates/**/*.tpl",
+      "**/templates/**/*.yaml",
+      "**/templates/**/*.yml",
+      "**/helmfile.d/**/*.yaml",
+      "**/helmfile.d/**/*.yml"
+    ]
+  },
+  "lsp": {
+    "ansible-language-server": {
+      "settings": {
+        "ansible": {
+          "path": "ansible"
+        },
+        "executionEnvironment": {
+          "enabled": false
+        },
+        "python": {
+          "interpreterPath": "python3"
+        },
+        "validation": {
+          "enabled": true,
+          "lint": {
+            "enabled": true,
+            "path": "ansible-lint"
+          }
+        }
+      }
+    }
+  }
+}
