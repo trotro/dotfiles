@@ -31,9 +31,9 @@
     "light": "Ayu Mirage",
     "dark": "Ayu Mirage"
   },
-  "ui_font_size": 14,
+  "ui_font_size": 13,
   "buffer_font_family": "Zed Plex Mono",
-  "buffer_font_size": 14,
+  "buffer_font_size": 13,
   "terminal": {
     //"font_family": "Hack Nerd Font",
     "font_family": "ZedMono Nerd Font",

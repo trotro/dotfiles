@@ -1,31 +1,65 @@
-[push]
-	default = simple
-[core]
-	trustctime = false
-	editor = vim
-	filemode = false
-[color]
-	ui = true
-[credential]
-	helper = cache --timeout=3600
-[merge]
-	tool = vimdiff
-[mergetool]
-	keeptemporaries = false
-	keepbackups = false
-	prompt = false
-	trustexitcode = false
 [alias]
-	last = log -1 --stat
-	cp = cherry-pick
-	co = checkout
-	cl = clone
-	ci = commit
-	st = status -sb
-	br = branch
-	unstage = reset HEAD --
-	dc = diff --cached
-	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %Cblue<%an>%Creset' --abbrev-commit --date=relative --all
+    last = log -1 --stat
+    cp = cherry-pick
+    co = checkout
+    cl = clone
+    ci = commit
+    st = status -sb
+    br = branch
+    unstage = reset HEAD --
+    dc = diff --cached
+    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %Cblue<%an>%Creset' --abbrev-commit --date=relative --all
+[branch]
+    sort = committerdate
+[color]
+    ui = true
+[column]
+    ui = auto
+[commit]
+        verbose = true
+[core]
+    trustctime = false
+    editor = hx
+    filemode = false
+    excludesfile = ~/.gitignore
+[credential]
+    helper = cache --timeout=3600
+[diff]
+    algorithm = histogram
+    colorMoved = plain
+    mnemonicPrefix = true
+    renames = true
+[fetch]
+    prune = true
+    pruneTags = true
+    all = true
+[help]
+    autocorrect = prompt
+[init]
+    defaultBranch = main
+[merge]
+    #tool = vimdiff
+    conflictstyle = zdiff3
+[mergetool]
+    keeptemporaries = false
+    keepbackups = false
+    prompt = false
+    trustexitcode = false
+[pull]
+    rebase = true
+[push]
+    autoSetupRemote = true
+    followTags = true
+    default = simple
 [user]
-	name = nicolas Trauwaen
-	email = ntrauwaen@gmail.com
+    name = nicolas T.
+    email = trotro@users.noreply.github.com
+[tag]
+    sort = version:refname
+[rebase]
+    autoSquash = true
+    autoStash = true
+    updateRefs = true
+[rerere]
+    enabled = true
+    autoupdate = true

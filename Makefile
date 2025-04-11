@@ -1,37 +1,55 @@
 .PHONY: all
 all: dotfiles
 
-.PHONY: dotfiles
-dotfiles:	## Installs the dotfiles.
-	for file in $(shell find $(CURDIR) -name ".*" -not -name ".gitignore" -not -name ".git" -not -name ".*.swp" -not -name ".*~" -not -name ".travis.yml" -not -path ".config"); do \
-		f=$$(basename $$file); \
-		ln -sfn $$file $(HOME)/$$f; \
-	done;
+# .PHONY: dotfiles
+# dotfiles:	## Deploys the dotfiles.
+# 	for file in $(shell find $(CURDIR) -name ".*" -not -name ".gitignore" -not -name ".git" -not -name ".*.swp" -not -name ".*~" -not -name ".travis.yml"); do \
+# 		f=$$(basename $$file); \
+# 		ln -sfn $$file $(HOME)/$$f; \
+# 	done;
 
 .PHONY: bash
-bash:	## Installs bash dotfiles.
-	for file in $(shell find $(CURDIR) -name ".bash*"); do \
+bash:	## Deploys bash dotfiles.
+	for file in $(shell find $(CURDIR)/ -name ".bash*"); do \
 		f=$$(basename $$file); \
 		ln -sfn $$file $(HOME)/$$f; \
 	done;
 
 .PHONY: fish
-fish:	## Installs fish .config files.
-	for file in $(shell find $(CURDIR)/.config/fish/conf.d -name "*.fish"); do \
+fish:	## Deploys fish dotfiles.
+	ln -sfn $(CURDIR)/fish/config.fish $(HOME)/.config/fish/config.fish;
+	for file in $(shell find $(CURDIR)/fish/conf.d/ -name "*.fish"); do \
 		f=$$(basename $$file); \
 		ln -sfn $$file $(HOME)/.config/fish/conf.d/$$f; \
 	done;
-
-.PHONY: neovim
-neovim:	## Installs n(eo)vim .config files.
-	for file in $(shell find $(CURDIR)/.config/nvim -name "*.vim"); do \
+	for file in $(shell find $(CURDIR)/fish/functions/ -name "*.fish"); do \
 		f=$$(basename $$file); \
-		ln -sfn $$file $(HOME)/.config/nvim/$$f; \
+		ln -sfn $$file $(HOME)/.config/fish/functions/$$f; \
 	done;
 
+.PHONY: helix
+helix:	## Deploys helix dotfiles.
+	ln -sfn $(CURDIR)/helix/* $(HOME)/.config/helix;
+
+.PHONY: mise
+mise:	## Deploys mise dotfiles.
+	ln -sfn $(CURDIR)/mise/* $(HOME)/.config/mise;
+
+.PHONY: neovim
+neovim:	## Deploys n(eo)vim dotfiles.
+	ln -sfn $(CURDIR)/nvim/* $(HOME)/.config/nvim;
+
+.PHONY: zed
+zed:	## Deploys zed dotfiles.
+	ln -sfn $(CURDIR)/zed/* $(HOME)/.config/zed;
+
+.PHONY: zellij
+zellij:	## Deploys zellij dotfiles.
+	ln -sfn $(CURDIR)/zellij $(HOME)/.config/zellij;
+
 .PHONY: zsh
-zsh:	## Installs zsh dotfiles.
-	for file in $(shell find $(CURDIR) -name ".zsh*"); do \
+zsh:	## Deploys zsh dotfiles.
+	for file in $(shell find $(CURDIR)/ -name ".zsh*"); do \
 		f=$$(basename $$file); \
 		ln -sfn $$file $(HOME)/$$f; \
 	done;
