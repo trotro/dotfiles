@@ -1,5 +1,5 @@
 .PHONY: all
-all: dotfiles
+all: fish git helix mise zed zellij zsh
 
 # .PHONY: dotfiles
 # dotfiles:	## Deploys the dotfiles.
@@ -26,6 +26,10 @@ fish:	## Deploys fish dotfiles.
 		f=$$(basename $$file); \
 		ln -sfn $$file $(HOME)/.config/fish/functions/$$f; \
 	done;
+
+.PHONY: git
+git:	## Deploys git dotfiles.
+	ln -sfn $(CURDIR)/.git* $(HOME)/;
 
 .PHONY: helix
 helix:	## Deploys helix dotfiles.
