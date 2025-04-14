@@ -2,6 +2,7 @@
 age = "latest"
 bat = "latest"
 cosign = "latest"
+delta = "latest"
 dust = "latest"
 fd = "latest"
 gcloud = "latest"
@@ -11,6 +12,7 @@ kubecolor = "latest"
 lsd = "latest"
 python = "latest"
 rg = "latest"
+ruff = "latest"
 rust = "latest"
 slsa-verifier = "latest"
 sops = "latest"
@@ -18,3 +20,7 @@ starship = "latest"
 uv = "latest"
 xh = "latest"
 zellij = "latest"
+
+[env]
+# Install seed packages (pip, setuptools, and wheel) into the virtual environment.
+_.python.venv = { path = "{{env.HOME}}/.venv", create = true }
