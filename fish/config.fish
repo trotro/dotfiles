@@ -3,6 +3,7 @@ if status is-interactive
     /opt/homebrew/bin/brew shellenv | source
     mise activate fish | source
     starship init fish | source
+    macchina
 else
     mise activate fish --shims | source
 end
