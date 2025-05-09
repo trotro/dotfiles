@@ -31,6 +31,10 @@ fish:	## Deploys fish dotfiles.
 git:	## Deploys git dotfiles.
 	ln -sfn $(CURDIR)/.git* $(HOME)/;
 
+.PHONY: hammerspoon
+hammerspoon:	## Deploys hammerspoons dotfiles.
+	ln -sfn $(CURDIR)/hammerspoon/* $(HOME)/.hammerspoon/;
+
 .PHONY: helix
 helix:	## Deploys helix dotfiles.
 	ln -sfn $(CURDIR)/helix/* $(HOME)/.config/helix;
@@ -70,11 +74,11 @@ endif
 
 .PHONY: shellcheck
 shellcheck: ## Runs the shellcheck tests on the scripts.
-	docker run --rm -i $(DOCKER_FLAGS) \
+	podman run --rm -i $(DOCKER_FLAGS) \
 		--name df-shellcheck \
 		-v $(CURDIR):/usr/src:ro \
 		--workdir /usr/src \
-		r.j3ss.co/shellcheck ./test.sh
+		koalaman/shellcheck:stable ./test.sh
 
 .PHONY: help
 help:

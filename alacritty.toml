@@ -1,7 +1,6 @@
 window:
-  dimensions:
-    columns: 80
-lines: 24
+  decorations: buttonless
+  startup_mode: Maximized
 
 dynamic_title: true
 
