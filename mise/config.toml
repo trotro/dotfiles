@@ -1,5 +1,6 @@
 [tools]
 age = "latest"
+awscli = "latest"
 bat = "latest"
 cosign = "latest"
 dagger = "latest"
