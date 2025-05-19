@@ -47,6 +47,10 @@ mise:	## Deploys mise dotfiles.
 neovim:	## Deploys n(eo)vim dotfiles.
 	ln -sfn $(CURDIR)/nvim/* $(HOME)/.config/nvim;
 
+.PHONY: topgrade
+topgrade:	## Deploys topgrade dotfiles.
+	ln -sfn $(CURDIR)/topgrade.toml $(HOME)/.config/topgrade.toml;
+
 .PHONY: zed
 zed:	## Deploys zed dotfiles.
 	ln -sfn $(CURDIR)/zed/* $(HOME)/.config/zed;
