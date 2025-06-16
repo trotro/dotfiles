@@ -1,5 +1,5 @@
 .PHONY: all
-all: fish git helix mise zed zellij zsh
+all: alacritty fish git helix mise zed zellij zsh
 
 # .PHONY: dotfiles
 # dotfiles:	## Deploys the dotfiles.
@@ -7,6 +7,10 @@ all: fish git helix mise zed zellij zsh
 # 		f=$$(basename $$file); \
 # 		ln -sfn $$file $(HOME)/$$f; \
 # 	done;
+
+.PHONY: alacritty
+alacritty:	## Deploys alacrittys dotfiles.
+	ln -sfn $(CURDIR)/alacritty $(HOME)/.config/;
 
 .PHONY: bash
 bash:	## Deploys bash dotfiles.
@@ -34,10 +38,6 @@ git:	## Deploys git dotfiles.
 .PHONY: hammerspoon
 hammerspoon:	## Deploys hammerspoons dotfiles.
 	ln -sfn $(CURDIR)/hammerspoon/* $(HOME)/.hammerspoon/;
-
-.PHONY: helix
-helix:	## Deploys helix dotfiles.
-	ln -sfn $(CURDIR)/helix/* $(HOME)/.config/helix;
 
 .PHONY: mise
 mise:	## Deploys mise dotfiles.
