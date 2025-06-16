@@ -7,6 +7,7 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
+  "icon_theme": "Catppuccin Latte",
   "features": {
     "edit_prediction_provider": "zed"
   },
@@ -25,8 +26,11 @@
     },
     "version": "2"
   },
+  "minimap": {
+    "show": "auto"
+  },
   "soft_wrap": "editor_width",
-  "theme": "Soft Dark Pop UI",
+  "theme": "Catppuccin Latte",
   "indent_guides": {
     "enabled": true,
     "coloring": "indent_aware"
