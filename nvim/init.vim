@@ -47,46 +47,47 @@ endif
 let g:python3_host_prog = '/Users/n.trauwaen/.venv-nvim/bin/python3'
 
 " vim-plug
-let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
-if empty(glob(data_dir . '/autoload/plug.vim'))
-  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-endif
+"let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
+"if empty(glob(data_dir . '/autoload/plug.vim'))
+"  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+"  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+"endif
 
-call plug#begin('~/.vim/plugged')
+"call plug#begin('~/.vim/plugged')
 " UI plugins
-Plug 'airblade/vim-gitgutter'
-Plug 'vim-airline/vim-airline'
-Plug 'mhinz/vim-startify'
+"Plug 'airblade/vim-gitgutter'
+"Plug 'vim-airline/vim-airline'
+"Plug 'mhinz/vim-startify'
 " Code plugins
-Plug 'sheerun/vim-polyglot'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'dense-analysis/ale'
-Plug 'pearofducks/ansible-vim'
-call plug#end()
+"Plug 'sheerun/vim-polyglot'
+"Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+"Plug 'dense-analysis/ale'
+"Plug 'pearofducks/ansible-vim'
+"call plug#end()
 
 " Airline
-set laststatus=2
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#buffer_nr_show = 1
-let g:airline_powerline_fonts = 1
-let g:airline_statusline_ontop=0
-"let g:airline_theme='base16_twilight'
-let g:airline#extensions#tabline#formatter = 'default'
+"set laststatus=2
+"let g:airline#extensions#tabline#enabled = 1
+"let g:airline#extensions#tabline#buffer_nr_show = 1
+"let g:airline_powerline_fonts = 1
+"let g:airline_statusline_ontop=0
+""let g:airline_theme='base16_twilight'
+"let g:airline#extensions#tabline#formatter = 'default'
 
 " doeplete
-let g:deoplete#enable_at_startup = 1
+"let g:deoplete#enable_at_startup = 1
 
 " Ale
-let g:ale_linters = {'python': ['flake8', 'pylint'], 'javascript': ['eslint'], 'ansible': ['ansible-lint']}
-let g:ale_linters_explicit = 1
-let g:ale_fixers = {'*': ['trim_whitespace'], 'javascript': ['prettier', 'eslint'], 'yaml': ['prettier']}
-let g:ale_fix_on_save = 1
-let g:ale_completion_enabled = 1
-let g:ale_completion_autoimport = 1
-set omnifunc=ale#completion#OmniFunc
-nmap <silent> <C-k> <Plug>(ale_previous_wrap)
-nmap <silent> <C-j> <Plug>(ale_next_wrap)
+"let g:ale_linters = {'python': ['flake8', 'pylint'], 'javascript': ['eslint'], 'ansible': ['ansible-lint']}
+"let g:ale_linters_explicit = 1
+"let g:ale_fixers = {'*': ['trim_whitespace'], 'javascript': ['prettier', 'eslint'], 'yaml': ['prettier']}
+"let g:ale_fix_on_save = 1
+"let g:ale_completion_enabled = 1
+"let g:ale_completion_autoimport = 1
+"set omnifunc=ale#completion#OmniFunc
+"nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+"nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
 " Ansible
-let g:ansible_unindent_after_newline = 1
+"let g:ansible_unindent_after_newline = 1
+

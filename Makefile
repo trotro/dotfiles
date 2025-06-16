@@ -10,7 +10,7 @@ all: alacritty fish git helix mise zed zellij zsh
 
 .PHONY: alacritty
 alacritty:	## Deploys alacrittys dotfiles.
-	ln -sfn $(CURDIR)/alacritty $(HOME)/.config/;
+	ln -sfn $(CURDIR)/alacritty $(HOME)/.config/alacritty;
 
 .PHONY: bash
 bash:	## Deploys bash dotfiles.
@@ -45,7 +45,7 @@ mise:	## Deploys mise dotfiles.
 
 .PHONY: neovim
 neovim:	## Deploys n(eo)vim dotfiles.
-	ln -sfn $(CURDIR)/nvim/* $(HOME)/.config/nvim;
+	ln -sfn $(CURDIR)/nvim $(HOME)/.config/nvim;
 
 .PHONY: topgrade
 topgrade:	## Deploys topgrade dotfiles.
@@ -87,3 +87,4 @@ shellcheck: ## Runs the shellcheck tests on the scripts.
 .PHONY: help
 help:
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
+
