@@ -8,6 +8,7 @@
 // from the command palette or from `Zed` application menu.
 {
   "icon_theme": "Catppuccin Latte",
+  "theme": "Kanagawa Wave",
   "features": {
     "edit_prediction_provider": "zed"
   },
@@ -30,7 +31,6 @@
     "show": "auto"
   },
   "soft_wrap": "editor_width",
-  "theme": "Catppuccin Latte",
   "indent_guides": {
     "enabled": true,
     "coloring": "indent_aware"
