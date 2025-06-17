@@ -1,5 +1,8 @@
 #!/usr/local/bin/fish
 
+# Activate krew plugins
+set -gx PATH $PATH $HOME/.krew/bin
+
 # This needs to be added before "function ... --wraps kubectl"
 #set k8s (whereis kubectl | cut -d' ' -f2)
 #command $k8s completion fish | source

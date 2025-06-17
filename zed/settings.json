@@ -40,8 +40,8 @@
     "liga": false
   },
   "ui_font_size": 13,
-  "buffer_font_size": 12.0,
-  // "buffer_font_family": "Zed Plex Mono",
+  "buffer_font_size": 13.0,
+  "buffer_font_family": "Hack Nerd Font",
   "cursor_blink": true,
   "experimental.theme_overrides": {},
   "git": {
@@ -58,8 +58,7 @@
     "show_errors": true
   },
   "terminal": {
-    //"font_family": "Hack Nerd Font",
-    "font_family": "ZedMono Nerd Font",
+    "font_family": "Hack Nerd Font",
     "font_size": null,
     "line_height": "comfortable",
     "detect_venv": {
