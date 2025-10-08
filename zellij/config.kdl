@@ -307,8 +307,8 @@ default_mode "normal"
 // The folder in which Zellij will look for layouts
 // (Requires restart)
 // 
-// layout_dir "/tmp"
- 
+//layout_dir "$HOME/.config/zellij/config/layouts"
+
 // The folder in which Zellij will look for themes
 // (Requires restart)
 // 
@@ -321,14 +321,14 @@ default_mode "normal"
 //   - true (default)
 //   - false
 // 
-// mouse_mode false
+mouse_mode true
  
 // Toggle having pane frames around the panes
 // Options:
 //   - true (default, enabled)
 //   - false
 // 
-// pane_frames false
+pane_frames false
  
 // When attaching to an existing session with other users,
 // should the session be mirrored (true)
@@ -365,9 +365,7 @@ default_mode "normal"
 // copy_command "xclip -selection clipboard" // x11
 // copy_command "wl-copy"                    // wayland
 // copy_command "pbcopy"                     // osx
-// 
-// copy_command "pbcopy"
- 
+
 // Choose the destination for copied text
 // Allows using the primary selection buffer (on x11/wayland) instead of the system clipboard.
 // Does not apply when using copy_command.
@@ -375,12 +373,12 @@ default_mode "normal"
 //   - system (default)
 //   - primary
 // 
-// copy_clipboard "primary"
+copy_clipboard "primary"
  
 // Enable automatic copying (and clearing) of selection when releasing mouse
 // Default: true
 // 
-// copy_on_select true
+copy_on_select true
  
 // Path to the default editor to use to edit pane scrollbuffer
 // Default: $EDITOR or $VISUAL
