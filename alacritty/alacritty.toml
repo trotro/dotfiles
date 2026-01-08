@@ -5,13 +5,15 @@ live_config_reload = true
 decorations = "Buttonless"
 startup_mode = "Maximized"
 dynamic_title = true
+opacity = 0.8
+blur = true
 
 [font]
 size = 13.0
-normal = { family = "Hack Nerd Font", style = "Regular" }
-bold = { family = "Hack Nerd Font", style = "Bold" }
-italic = { family = "Hack Nerd Font", style = "Italic" }
-bold_italic = { family = "Hack Nerd Font", style = "Bold Italic" }
+normal = { family = "EnvyCodeR Nerd Font", style = "Regular" }
+bold = { family = "EnvyCodeR Nerd Font", style = "Bold" }
+italic = { family = "EnvyCodeR Nerd Font", style = "Italic" }
+bold_italic = { family = "EnvyCodeR Nerd Font", style = "Bold Italic" }
 
 [selection]
 save_to_clipboard = true

@@ -21,11 +21,13 @@ bash:	## Deploys bash dotfiles.
 
 .PHONY: fish
 fish:	## Deploys fish dotfiles.
+	mkdir -p $(HOME)/.config/fish/conf.d/;
 	ln -sfn $(CURDIR)/fish/config.fish $(HOME)/.config/fish/config.fish;
 	for file in $(shell find $(CURDIR)/fish/conf.d/ -name "*.fish"); do \
 		f=$$(basename $$file); \
 		ln -sfn $$file $(HOME)/.config/fish/conf.d/$$f; \
 	done;
+	mkdir -p $(HOME)/.config/fish/functions/;
 	for file in $(shell find $(CURDIR)/fish/functions/ -name "*.fish"); do \
 		f=$$(basename $$file); \
 		ln -sfn $$file $(HOME)/.config/fish/functions/$$f; \
@@ -41,7 +43,7 @@ hammerspoon:	## Deploys hammerspoons dotfiles.
 
 .PHONY: mise
 mise:	## Deploys mise dotfiles.
-	ln -sfn $(CURDIR)/mise/* $(HOME)/.config/mise;
+	ln -sfn $(CURDIR)/mise $(HOME)/.config/mise;
 
 .PHONY: neovim
 neovim:	## Deploys n(eo)vim dotfiles.
@@ -61,7 +63,7 @@ zed:	## Deploys zed dotfiles.
 
 .PHONY: zellij
 zellij:	## Deploys zellij dotfiles.
-	ln -sfn $(CURDIR)/zellij $(HOME)/.config/zellij;
+	ln -sfn $(CURDIR)/zellij/* $(HOME)/.config/zellij;
 
 .PHONY: zsh
 zsh:	## Deploys zsh dotfiles.

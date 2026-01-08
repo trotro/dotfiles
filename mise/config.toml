@@ -1,3 +1,7 @@
+[settings]
+ignored_config_paths = ["$HOME/dotfiles/mise/config.toml"]
+idiomatic_version_file_enable_tools = []
+
 [tools]
 age = "latest"
 awscli = "latest"
@@ -11,7 +15,9 @@ direnv = "latest"
 dust = "latest"
 fd = "latest"
 gcloud = "latest"
+gh = "latest"
 gitui = "latest"
+glab = "latest"
 helm = "latest"
 java = "latest"
 k9s = "latest"
@@ -20,9 +26,9 @@ kubectl = "latest"
 kubectx = "latest"
 lsd = "latest"
 minikube = "latest"
-neovim = "latest"
 python = "latest"
 rg = "latest"
+ruby = "latest"
 ruff = "latest"
 rust = "latest"
 slsa-verifier = "latest"
