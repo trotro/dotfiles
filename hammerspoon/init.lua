@@ -10,6 +10,6 @@ local function toggleApp(name)
 end
 
 -- Global terminal toggle
-hs.hotkey.bind({}, "F1", function() toggleApp("alacritty") end)
+hs.hotkey.bind({}, "F1", function() toggleApp("ghostty") end)
 hs.hotkey.bind({}, "F2", function() toggleApp("bitwarden") end)
-hs.hotkey.bind({}, "F3", function() toggleApp("zed") end)
+hs.hotkey.bind({}, "F3", function() toggleApp("anytype") end)

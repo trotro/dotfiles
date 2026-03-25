@@ -1,5 +1,22 @@
+.PHONY: bootstrap
+bootstrap: dirs all ## Fresh install: creates config dirs then deploys everything.
+
+.PHONY: dirs
+dirs: ## Creates all required config directories.
+	mkdir -p $(HOME)/.config/fish/conf.d
+	mkdir -p $(HOME)/.config/fish/functions
+	mkdir -p $(HOME)/.config/alacritty
+	mkdir -p $(HOME)/.config/mise
+	mkdir -p $(HOME)/.config/zed
+	mkdir -p $(HOME)/.config/zellij
+	mkdir -p $(HOME)/.config/nvim
+	mkdir -p $(HOME)/.hammerspoon
+
 .PHONY: all
-all: alacritty fish git helix mise zed zellij zsh
+all: core hammerspoon neovim starship topgrade ## Deploys all dotfiles.
+
+.PHONY: core
+core: alacritty fish git helix mise zed zellij zsh ## Deploys core dotfiles (alacritty, fish, git, helix, mise, zed, zellij, zsh).
 
 # .PHONY: dotfiles
 # dotfiles:	## Deploys the dotfiles.
@@ -35,7 +52,8 @@ fish:	## Deploys fish dotfiles.
 
 .PHONY: git
 git:	## Deploys git dotfiles.
-	ln -sfn $(CURDIR)/.git* $(HOME)/;
+	ln -sfn $(CURDIR)/.gitconfig $(HOME)/;
+	ln -sfn $(CURDIR)/.gitignore $(HOME)/;
 
 .PHONY: hammerspoon
 hammerspoon:	## Deploys hammerspoons dotfiles.
@@ -74,21 +92,10 @@ zsh:	## Deploys zsh dotfiles.
 
 .PHONY: test
 test: shellcheck ## Runs all the tests on the files in the repository.
-# if this session isn't interactive, then we don't want to allocate a
-# TTY, which would fail, but if it is interactive, we do want to attach
-# so that the user can send e.g. ^C through.
-INTERACTIVE := $(shell [ -t 0 ] && echo 1 || echo 0)
-ifeq ($(INTERACTIVE), 1)
-	DOCKER_FLAGS += -t
-endif
 
 .PHONY: shellcheck
-shellcheck: ## Runs the shellcheck tests on the scripts.
-	podman run --rm -i $(DOCKER_FLAGS) \
-		--name df-shellcheck \
-		-v $(CURDIR):/usr/src:ro \
-		--workdir /usr/src \
-		koalaman/shellcheck:stable ./test.sh
+shellcheck: ## Runs the shellcheck tests on the scripts via Dagger.
+	dagger -m ci call shellcheck --source=.
 
 .PHONY: help
 help:

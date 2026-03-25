@@ -1,12 +1,18 @@
 # dotfiles
 
-[![Build Status](https://travis-ci.org/trotro/dotfiles.svg?branch=master)](https://travis-ci.org/trotro/dotfiles)
+[![ShellCheck](https://gitlab.com/trotro/dotfiles/badges/main/pipeline.svg)](https://gitlab.com/trotro/dotfiles/-/pipelines)
 
 Just my dotfiles.
 
 ## to install
 
-To view the different make options and chose which to use:
+Fresh install (creates config dirs + deploys everything):
+
+```shell
+make bootstrap
+```
+
+To view all available targets:
 
 ```shell
 make help

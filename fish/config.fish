@@ -1,11 +1,17 @@
 if status is-interactive
     # Commands to run in interactive sessions can go here
-#    /opt/homebrew/bin/brew shellenv | source
+    if test -x (brew --prefix 2>/dev/null)/bin/brew
+        eval ((brew --prefix)/bin/brew shellenv)
+    end
     mise activate fish | source
-    direnv hook fish | source
+    if command -q tirith
+        tirith init | source
+    end
     starship init fish | source
     source ~/.credentials
-#    macchina
 else
     mise activate fish --shims | source
+    if command -q tirith
+        tirith init | source
+    end
 end

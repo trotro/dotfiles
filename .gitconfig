@@ -19,7 +19,7 @@
         verbose = true
 [core]
     trustctime = false
-    editor = hx
+    editor = vi
     filemode = false
     excludesfile = ~/.gitignore
 [credential]

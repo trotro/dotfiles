@@ -14,7 +14,7 @@ function kubecolor --wraps kubectl
 end
 
 # adds alias for "kubectl" to "kubecolor" with completions
-function kubectl --wraps kubectl
+function kubectl --wraps kubecolor
     command kubecolor $argv
 end
 

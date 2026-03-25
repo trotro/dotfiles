@@ -7,12 +7,37 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
+  "agent_servers": {
+    "github-copilot-cli": {
+      "type": "registry"
+    },
+    "claude-acp": {
+      "type": "registry"
+    },
+    "opencode": {
+      "type": "registry"
+    },
+    "mistral-vibe": {
+      "type": "registry"
+    },
+    "github-copilot": {
+      "type": "registry"
+    }
+  },
+  "git_panel": {
+    "tree_view": true
+  },
+  "always_treat_brackets_as_autoclosed": true,
+  "colorize_brackets": true,
+  "show_signature_help_after_edits": true,
   "icon_theme": "Catppuccin Latte",
-  "theme": "Kanagawa Wave",
-  "features": {
-    "edit_prediction_provider": "zed"
+  "theme": {
+    "mode": "light",
+    "light": "Kanagawa Lotus",
+    "dark": "Kanagawa Wave"
   },
   "edit_predictions": {
+    "provider": "zed",
     "mode": "subtle",
     "copilot": {
       "proxy": null,
@@ -21,11 +46,44 @@
     "enabled_in_text_threads": false
   },
   "agent": {
+    "default_profile": "write",
+    "favorite_models": [
+      {
+        "provider": "anthropic",
+        "model": "claude-sonnet-4-6-latest",
+        "enable_thinking": false
+      },
+      {
+        "provider": "anthropic",
+        "model": "claude-sonnet-4-6-thinking-latest",
+        "enable_thinking": false
+      },
+      {
+        "provider": "copilot_chat",
+        "model": "claude-opus-4.6",
+        "enable_thinking": false
+      },
+      {
+        "provider": "copilot_chat",
+        "model": "claude-haiku-4.5",
+        "enable_thinking": false
+      },
+      {
+        "provider": "anthropic",
+        "model": "claude-haiku-4-5-thinking-latest",
+        "enable_thinking": false
+      },
+      {
+        "provider": "copilot_chat",
+        "model": "claude-sonnet-4.6",
+        "enable_thinking": false
+      }
+    ],
     "default_model": {
-      "provider": "google",
-      "model": "gemini-2.0-pro-exp"
-    },
-    "version": "2"
+      "enable_thinking": true,
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5-thinking-latest"
+    }
   },
   "minimap": {
     "show": "auto"
@@ -51,11 +109,7 @@
     }
   },
   "project_panel": {
-    "indent_size": 12,
-    "show_hidden_files": true,
-    "show_ignored_files": true,
-    "show_warnings": true,
-    "show_errors": true
+    "indent_size": 12
   },
   "terminal": {
     "font_family": "Hack Nerd Font",
@@ -81,11 +135,9 @@
   "languages": {
     "Markdown": {
       "format_on_save": "on"
-    }
-  },
-  "language_overrides": {
+    },
     "Python": {
-      "format_on_save": {
+      "formatter": {
         "external": {
           "command": "ruff",
           "arguments": [
@@ -98,7 +150,8 @@
             "-"
           ]
         }
-      }
+      },
+      "format_on_save": "on"
     }
   },
   "file_types": {
@@ -116,6 +169,8 @@
       "**/handlers/*.yaml",
       "**/group_vars/*.yml",
       "**/group_vars/*.yaml",
+      "**/host_vars/*.yml",
+      "**/host_vars/*.yaml",
       "**/playbooks/*.yaml",
       "**/playbooks/*.yml",
       "**playbook*.yaml",

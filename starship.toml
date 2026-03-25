@@ -183,7 +183,7 @@ format = '[ $symbol$cloud(\($project\))]($style)'
 [time]
 disabled = false
 time_format = "%R"
-style = "fg:crust bg:lavender"
+#style = "fg:crust bg:lavender"
 format = '[  $time ]($style)'
 
 [line_break]
